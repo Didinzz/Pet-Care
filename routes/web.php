@@ -2,6 +2,10 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DokterController;
+use App\Http\Controllers\LandingController;
+use App\Http\Controllers\OwnerController;
+use App\Http\Controllers\PetController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -9,11 +13,40 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth')->group(function () {
     Route::prefix('dashboard')->group(function () {
         Route::get('/', [DashboardController::class, 'show'])->name('dashboard');
+        Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+
+        // owner
+        Route::get('/owner', [OwnerController::class, 'index'])->name('owner');
+        Route::get('/owner/create', [OwnerController::class, 'create'])->name('owner.create');
+        Route::post('/owner/post', [OwnerController::class, 'store'])->name('owner.store');
+        Route::get('/owner/edit/{id}', [OwnerController::class, 'edit'])->name('owner.edit');
+        Route::put('/owner/update/{id}', [OwnerController::class, 'update'])->name('owner.update');
+        Route::delete('/owner/delete/{id}', [OwnerController::class, 'destroy'])->name('owner.destroy');
+
+        // pet
+        Route::get('/pet', [PetController::class, 'index'])->name('pet');
+        Route::get('/pet/create', [PetController::class, 'create'])->name('pet.create');
+        Route::post('/pet/post', [PetController::class, 'store'])->name('pet.store');
+        Route::get('/pet/edit/{id}', [PetController::class, 'edit'])->name('pet.edit');
+        Route::put('/pet/update/{id}', [PetController::class, 'update'])->name('pet.update');
+        Route::delete('/pet/delete/{id}', [PetController::class, 'destroy'])->name('pet.destroy');
+
+        // dokter
+        Route::get('/dokter', [DokterController::class, 'index'])->name('dokter');
+        Route::get('/dokter/create', [DokterController::class, 'create'])->name('dokter.create');
+        Route::post('/dokter/post', [DokterController::class, 'store'])->name('dokter.store');
+        Route::get('/dokter/edit/{id}', [DokterController::class, 'edit'])->name('dokter.edit');
+        Route::put('/dokter/update/{id}', [DokterController::class, 'update'])->name('dokter.update');
+        Route::delete('/dokter/delete/{id}', [DokterController::class, 'destroy'])->name('dokter.destroy');
+
     });
-    Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 });
 
 Route::middleware('guest')->group(function () {
     Route::get('/login', [AuthController::class, 'show'])->name('login');
     Route::post('/login', [AuthController::class, 'login'])->name('login.post');
 });
+
+Route::get('/', [LandingController::class, 'index'])->name('landing');
+
+
