@@ -18,7 +18,6 @@ return new class extends Migration
             $table->string('jenis_hewan');
             $table->string('ras_hewan');
             $table->enum('jenis_kelamin', ['Jantan', 'Betina']);
-            $table->string('umur')->nullable();
             $table->enum('status_vaksinasi', ['Belum', 'Lengkap', 'Perlu Booster']);
             $table->text('catatan_khusus')->nullable();
 

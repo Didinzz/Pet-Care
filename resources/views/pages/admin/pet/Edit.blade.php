@@ -36,6 +36,7 @@
                                 <div class="invalid-feedback">
                                     Pemilik hewan wajib dipilih
                                 </div>
+                                <x-input-error name="owner_id" />
                             </div>
 
                             <div class="form-row">
@@ -47,6 +48,7 @@
                                         <div class="invalid-feedback">
                                             Nama hewan tidak valid
                                         </div>
+                                        <x-input-error name="nama_hewan" />
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -57,6 +59,7 @@
                                         <div class="invalid-feedback">
                                             Jenis hewan tidak valid
                                         </div>
+                                        <x-input-error name="jenis_hewan" />
                                     </div>
                                 </div>
                             </div>
@@ -67,6 +70,7 @@
                                         <label>Ras</label>
                                         <input type="text" class="form-control" name="ras_hewan"
                                             value="{{ old('ras_hewan', $pet->ras_hewan) }}">
+                                        <x-input-error name="ras_hewan" />
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -84,6 +88,7 @@
                                         <div class="invalid-feedback">
                                             Jenis kelamin tidak valid
                                         </div>
+                                        <x-input-error name="jenis_kelamin" />
                                     </div>
                                 </div>
                             </div>
@@ -107,6 +112,7 @@
                                         <div class="invalid-feedback">
                                             Status vaksinasi tidak valid
                                         </div>
+                                        <x-input-error name="status_vaksinasi" />
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -118,11 +124,13 @@
                                                     placeholder="Tahun"
                                                     value="{{ old('umur_tahun', floor($pet->umur / 12)) }}">
                                                 <small class="form-text text-muted">Isi umur dalam tahun</small>
+                                                <x-input-error name="umur_tahun" />
                                             </div>
                                             <div class="col">
                                                 <input type="number" class="form-control" name="umur_bulan"
                                                     placeholder="Bulan" value="{{ old('umur_bulan', $pet->umur % 12) }}">
                                                 <small class="form-text text-muted">dalam bulan 0 - 11</small>
+                                                <x-input-error name="umur_bulan" />
                                             </div>
                                         </div>
                                         <div class="invalid-feedback">Umur wajib diisi</div>
@@ -136,6 +144,7 @@
                                 <div class="invalid-feedback">
                                     Catatan tidak valid
                                 </div>
+                                <x-input-error name="catatan_khusus" />
                             </div>
                         </div>
 

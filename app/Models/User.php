@@ -19,6 +19,10 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'foto',
+        'role',
+        'kontak',
+        'alamat',
         'email',
         'password',
     ];
@@ -45,4 +49,10 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function jadwalPraktik()
+    {
+        return $this->hasOne(JadwalPraktik::class);
+    }
+
 }

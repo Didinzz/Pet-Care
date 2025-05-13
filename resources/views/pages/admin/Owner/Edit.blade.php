@@ -28,6 +28,7 @@
                                         <div class="invalid-feedback">
                                             Nama lengkap tidak valid
                                         </div>
+                                        <x-input-error name="name" />
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -37,6 +38,7 @@
                                         <div class="invalid-feedback">
                                             Nomor WA tidak valid
                                         </div>
+                                        <x-input-error name="no_hp" />
                                     </div>
                                 </div>
                             </div>
@@ -48,6 +50,7 @@
                                         <div class="invalid-feedback">
                                             Alamat tidak valid
                                         </div>
+                                        <x-input-error name="address" />
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -57,6 +60,7 @@
                                         <div class="invalid-feedback">
                                             Catatan tidak valid
                                         </div>
+                                        <x-input-error name="note" />
                                     </div>
                                 </div>
                             </div>

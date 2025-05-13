@@ -1,5 +1,5 @@
 @php
-    $types = ['success', 'error', 'warning', 'info'];
+    $types = ['success', 'danger', 'warning', 'info'];
     $type = null;
     $message = null;
 

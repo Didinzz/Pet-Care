@@ -30,11 +30,17 @@ class OwnerController extends Controller
      */
     public function store(Request $request)
     {
-        $request = $request->validate([
+        $request->validate([
             'name' => 'required',
             'no_hp' => 'required|min:10',
             'address' => 'required',
             'note' => 'required',
+        ], [
+            'name.required' => 'Nama pelanggan harus diisi',
+            'no_hp.required' => 'Nomor HP harus diisi',
+            'no_hp.min' => 'Nomor HP minimal 10 digit',
+            'address.required' => 'Alamat harus diisi',
+            'note.required' => 'Catatan harus diisi',
         ]);
 
 
@@ -70,11 +76,17 @@ class OwnerController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $request = $request->validate([
+        $request->validate([
             'name' => 'required',
             'no_hp' => 'required|min:10',
             'address' => 'required',
             'note' => 'required',
+        ], [
+            'name.required' => 'Nama pelanggan harus diisi',
+            'no_hp.required' => 'Nomor HP harus diisi',
+            'no_hp.min' => 'Nomor HP minimal 10 digit',
+            'address.required' => 'Alamat harus diisi',
+            'note.required' => 'Catatan harus diisi',
         ]);
 
         $owner = Owner::findOrFail($id);

@@ -42,6 +42,14 @@ class PetController extends Controller
             'catatan_khusus' => 'nullable|string',
             'umur_tahun' => 'nullable|integer|min:0',
             'umur_bulan' => 'nullable|integer|min:0',
+        ], [
+            'nama_hewan.required' => 'Nama hewan harus diisi.',
+            'owner_id.required' => 'Pemilik hewan harus dipilih.',
+            'jenis_hewan.required' => 'Jenis hewan harus diisi.',
+            'jenis_kelamin.required' => 'Jenis kelamin harus dipilih.',
+            'status_vaksinasi.required' => 'Status vaksinasi harus dipilih.',
+            'umur_tahun.integer' => 'Umur tahun harus berupa angka.',
+            'umur_bulan.integer' => 'Umur bulan harus berupa angka.',
         ]);
 
         $totalUmur = ($request->umur_tahun * 12) + $request->umur_bulan;
@@ -94,6 +102,15 @@ class PetController extends Controller
             'catatan_khusus' => 'nullable|string',
             'umur_tahun' => 'nullable|integer|min:0',
             'umur_bulan' => 'nullable|integer|min:0|max:11',
+        ], [
+            'nama_hewan.required' => 'Nama hewan harus diisi.',
+            'owner_id.required' => 'Pemilik hewan harus dipilih.',
+            'jenis_hewan.required' => 'Jenis hewan harus diisi.',
+            'jenis_kelamin.required' => 'Jenis kelamin harus dipilih.',
+            'status_vaksinasi.required' => 'Status vaksinasi harus dipilih.',
+            'umur_tahun.integer' => 'Umur tahun harus berupa angka.',
+            'umur_bulan.integer' => 'Umur bulan harus berupa angka.',
+            'umur_bulan.max' => 'Umur bulan tidak boleh lebih dari 11.',
         ]);
 
         // Ambil data pet berdasarkan ID

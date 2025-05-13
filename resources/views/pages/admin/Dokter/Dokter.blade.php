@@ -20,7 +20,8 @@
 
                     <div class="card-header d-flex justify-content-between">
                         <h4>Data Dokter Hewan</h4>
-                        <a href="{{ route('dokter.create') }}"><button class="btn btn-success btn-lg text-white">Tambah</button></a>
+                        <a href="{{ route('dokter.create') }}"><button
+                                class="btn btn-success btn-lg text-white">Tambah</button></a>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
@@ -30,36 +31,45 @@
                                         <th class="text-center">
                                             #
                                         </th>
-                                        <th>Nama Lengkap</th>
-                                        <th>Whatsapp</th>
+                                        <th>Foto</th>
+                                        <th>Nama Dokter</th>
+                                        <th>Kontak</th>
+                                        <th>Jadwal</th>
+                                        <th>Jam Praktik</th>
                                         <th>Alamat</th>
-                                        <th>Catatan</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @forelse($owner as $index => $ownerData)
+                                    @forelse($dokters as $index => $dokter)
                                         <tr>
                                             <td>
                                                 {{ $loop->iteration }}
                                             </td>
-                                            <td>{{ $ownerData->nama_lengkap }}</td>
-                                            <td>{{ $ownerData->no_hp }}</td>
-                                            <td>{{ $ownerData->alamat }}</td>
-                                            <td data-toggle="tooltip" title="{{ $ownerData->catatan }}">
-                                                {{ Str::limit($ownerData->catatan, 20) }}</td>
+                                            <td> <img alt="image" src="{{ asset('storage/' . $dokter->foto) }}"
+                                                    class="rounded-circle" width="35" data-toggle="tooltip"
+                                                    title="{{ $dokter->name }}"></td>
+                                            <td>{{ $dokter->name }}</td>
+                                            <td>{{ $dokter->kontak }}</td>
+                                            <td>
+                                                {{ $dokter->jadwalPraktik ? $dokter->jadwalPraktik->formatted_jadwal : '-' }}
+                                            </td>
+                                            <td>
+                                                {{ $dokter->jadwalPraktik ? $dokter->jadwalPraktik->formatted_jam : '-' }}
+                                            </td>
+                                            <td>{{ $dokter->alamat }}</td>
                                             <td>
                                                 {{-- edit --}}
-                                                <a href="{{ route('owner.edit', $ownerData->id) }}"
+                                                <a href="{{ route('dokter.edit', $dokter->id) }}"
                                                     class="btn  btn-warning btn-md"><i class="fas fa-pencil-alt"></i></a>
                                                 {{-- delete --}}
                                                 <button class="btn btn-danger btn-md"
                                                     data-confirm="Hapus?|Apakah anda ingin menghapus data ini?"
-                                                    data-confirm-yes="document.getElementById('delete-form-{{ $ownerData->id }}').submit();">
+                                                    data-confirm-yes="document.getElementById('delete-form-{{ $dokter->id }}').submit();">
                                                     <i class="fas fa-trash"></i>
                                                 </button>
-                                                <form id="delete-form-{{ $ownerData->id }}"
-                                                    action="{{ route('owner.destroy', $ownerData->id) }}" method="POST"
+                                                <form id="delete-form-{{ $dokter->id }}"
+                                                    action="{{ route('dokter.destroy', $dokter->id) }}" method="POST"
                                                     style="display: none;">
                                                     @csrf
                                                     @method('DELETE')

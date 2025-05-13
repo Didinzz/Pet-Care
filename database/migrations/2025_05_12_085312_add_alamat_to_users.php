@@ -11,8 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('owners', function (Blueprint $table) {
-            $table->text('catatan')->nullable()->after('alamat');
+        Schema::table('users', function (Blueprint $table) {
+            $table->text('alamat')->nullable()->after('kontak');
         });
     }
 
@@ -21,7 +21,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('owners', function (Blueprint $table) {
+        Schema::table('users', function (Blueprint $table) {
             //
         });
     }
