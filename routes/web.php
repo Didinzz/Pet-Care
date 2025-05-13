@@ -6,6 +6,7 @@ use App\Http\Controllers\DokterController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\OwnerController;
 use App\Http\Controllers\PetController;
+use App\Http\Controllers\RiwayatKunjunganController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -38,6 +39,14 @@ Route::middleware('auth')->group(function () {
         Route::get('/dokter/edit/{id}', [DokterController::class, 'edit'])->name('dokter.edit');
         Route::put('/dokter/update/{id}', [DokterController::class, 'update'])->name('dokter.update');
         Route::delete('/dokter/delete/{id}', [DokterController::class, 'destroy'])->name('dokter.destroy');
+
+        //Riwayat
+        Route::get('/riwayat', [RiwayatKunjunganController::class, 'index'])->name('riwayat');
+        Route::get('/riwayat/create', [RiwayatKunjunganController::class, 'create'])->name('riwayat.create');
+        Route::post('/riwayat/post', [RiwayatKunjunganController::class, 'store'])->name('riwayat.store');
+        Route::get('/riwayat/edit/{id}', [RiwayatKunjunganController::class, 'edit'])->name('riwayat.edit');
+        Route::put('/riwayat/update/{id}', [RiwayatKunjunganController::class, 'update'])->name('riwayat.update');
+        Route::delete('/riwayat/delete/{id}', [RiwayatKunjunganController::class, 'destroy'])->name('riwayat.destroy');
 
     });
 });

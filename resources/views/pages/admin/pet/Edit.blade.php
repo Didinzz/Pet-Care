@@ -24,7 +24,7 @@
                         <div class="card-body">
                             <div class="form-group">
                                 <label>Pemilik Hewan</label>
-                                <select class="form-control" name="owner_id" required>
+                                <select class="form-control selectric" name="owner_id" required>
                                     <option disabled selected>Pilih Pemilik</option>
                                     @foreach ($owners as $owner)
                                         <option value="{{ $owner->id }}"
@@ -76,7 +76,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Jenis Kelamin</label>
-                                        <select class="form-control" name="jenis_kelamin" required>
+                                        <select class="form-control selectric" name="jenis_kelamin" required>
                                             <option disabled selected>Pilih</option>
                                             <option value="Jantan"
                                                 {{ old('jenis_kelamin', $pet->jenis_kelamin) == 'Jantan' ? 'selected' : '' }}>
@@ -97,7 +97,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Status Vaksinasi</label>
-                                        <select class="form-control" name="status_vaksinasi" required>
+                                        <select class="form-control selectric" name="status_vaksinasi" required>
                                             <option disabled selected>Pilih</option>
                                             <option value="Belum"
                                                 {{ old('status_vaksinasi', $pet->status_vaksinasi) == 'Belum' ? 'selected' : '' }}>

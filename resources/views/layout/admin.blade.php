@@ -19,8 +19,15 @@
     {{-- multiple select css --}}
     <link rel="stylesheet" href="{{ asset('assets/modules/select2/dist/css/select2.min.css') }}">
 
+  <link rel="stylesheet" href="{{ asset('assets/modules/jquery-selectric/selectric.css') }}">
+
+
     {{-- time picker css --}}
     <link rel="stylesheet" href="{{ asset('assets/modules/bootstrap-timepicker/css/bootstrap-timepicker.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/modules/bootstrap-daterangepicker/daterangepicker.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/modules/bootstrap-tagsinput/dist/bootstrap-tagsinput.css') }}">
+
+
 
 
 
@@ -77,22 +84,31 @@
     <script src="{{ asset('assets/modules/summernote/summernote-bs4.js') }}"></script>
     <script src="{{ asset('assets/modules/chocolat/dist/js/jquery.chocolat.min.js') }}"></script>
 
+
     <!-- Data tables JS Libraies -->
     <script src="{{ asset('assets/modules/datatables/datatables.min.js') }}"></script>
     <script src="{{ asset('assets/modules/datatables/DataTables-1.10.16/js/dataTables.bootstrap4.min.js') }}"></script>
     <script src="{{ asset('assets/modules/datatables/Select-1.2.4/js/dataTables.select.min.js') }}"></script>
 
+  <script src="{{ asset('assets/modules/jquery-selectric/jquery.selectric.min.js') }}"></script>
+
+
     <!-- Page Specific JS File -->
     <script src="{{ asset('assets/js/page/modules-datatables.js') }}"></script>
+    <script src="{{ asset('assets/modules/bootstrap-daterangepicker/daterangepicker.js') }}"></script>
+
 
     <!-- Page Specific JS File -->
     <script src="{{ asset('assets/js/page/index-0.js') }}"></script>
+    <script src="{{ asset('assets/js/page/forms-advanced-forms.js') }}"></script>
+
 
     {{-- multiple select --}}
     <script src="{{ asset('assets/modules/select2/dist/js/select2.full.min.js') }}"></script>
 
     {{-- time picker --}}
     <script src="{{ asset('assets/modules/bootstrap-timepicker/js/bootstrap-timepicker.min.js') }}"></script>
+    <script src="{{ asset('assets/modules/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js') }}"></script>
 
 
 

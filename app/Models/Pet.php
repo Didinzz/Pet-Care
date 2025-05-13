@@ -14,4 +14,9 @@ class Pet extends Model
     {   
         return $this->belongsTo(Owner::class);
     }
+
+    public function riwayatKunjungan()
+    {
+        return $this->hasMany(RiwayatKunjungan::class);
+    }
 }

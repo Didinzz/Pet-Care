@@ -55,4 +55,9 @@ class User extends Authenticatable
         return $this->hasOne(JadwalPraktik::class);
     }
 
+    public function riwayatKunjungan()
+    {
+        return $this->hasMany(RiwayatKunjungan::class, 'user_id');
+    }
+
 }

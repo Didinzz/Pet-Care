@@ -22,7 +22,7 @@
                         <div class="card-body">
                             <div class="form-group">
                                 <label>Pemilik Hewan</label>
-                                <select class="form-control" name="owner_id" required>
+                                <select class="form-control selectric" name="owner_id" required>
                                     <option disabled selected>Pilih Pemilik</option>
                                     @foreach ($owners as $owner)
                                         <option value="{{ $owner->id }}" {{ old('owner_id') == $owner->id ? 'selected' : '' }}>
@@ -76,7 +76,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Jenis Kelamin</label>
-                                        <select class="form-control" name="jenis_kelamin" required>
+                                        <select class="form-control selectric" name="jenis_kelamin" required>
                                             <option disabled selected>Pilih</option>
                                             <option value="Jantan" {{ old('jenis_kelamin') == 'Jantan' ? 'selected' : '' }}>
                                                 Jantan</option>
@@ -95,7 +95,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Status Vaksinasi</label>
-                                        <select class="form-control" name="status_vaksinasi" required>
+                                        <select class="form-control selectric" name="status_vaksinasi" required>
                                             <option disabled selected>Pilih</option>
                                             <option value="Belum" {{ old('status_vaksinasi') == 'Belum' ? 'selected' : '' }}>
                                                 Belum</option>
