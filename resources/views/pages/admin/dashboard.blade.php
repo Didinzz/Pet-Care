@@ -9,14 +9,14 @@
         <div class="col-lg-3 col-md-6 col-sm-6 col-12">
             <div class="card card-statistic-1">
                 <div class="card-icon bg-primary d-flex align-items-center justify-content-center">
-                    <i class="far fa-user"></i>
+                    <i class="fas fa-user-md"></i>
                 </div>
                 <div class="card-wrap">
                     <div class="card-header">
-                        <h4>Total Admin</h4>
+                        <h4>Total Dokter</h4>
                     </div>
                     <div class="card-body">
-                        10
+                        {{ $totalDokter?? 0 }}
                     </div>
                 </div>
             </div>
@@ -24,14 +24,14 @@
         <div class="col-lg-3 col-md-6 col-sm-6 col-12">
             <div class="card card-statistic-1">
                 <div class="card-icon bg-danger d-flex align-items-center justify-content-center">
-                    <i class="far fa-newspaper"></i>
+                    <i class="far fa-user"></i>
                 </div>
                 <div class="card-wrap">
                     <div class="card-header">
-                        <h4>News</h4>
+                        <h4>Total Pelanggan</h4>
                     </div>
                     <div class="card-body">
-                        42
+                        {{ $totalPelanggan?? 0 }}
                     </div>
                 </div>
             </div>
@@ -39,104 +39,35 @@
         <div class="col-lg-3 col-md-6 col-sm-6 col-12">
             <div class="card card-statistic-1">
                 <div class="card-icon bg-warning d-flex align-items-center justify-content-center">
-                    <i class="far fa-file"></i>
+                    <i class="fas fa-paw"></i>
                 </div>
                 <div class="card-wrap">
                     <div class="card-header">
-                        <h4>Reports</h4>
+                        <h4>Total Hewan</h4>
                     </div>
                     <div class="card-body">
-                        1,201
+                        {{ $totalHewan?? 0 }} 
                     </div>
                 </div>
             </div>
         </div>
         <div class="col-lg-3 col-md-6 col-sm-6 col-12">
             <div class="card card-statistic-1">
-                <div class="card-icon bg-success d-flex align-items-center justify-content-center">
-                    <i class="fas fa-circle"></i>
+                <div class="card-icon bg-info d-flex align-items-center justify-content-center">
+                    <i class="fas fa-history"></i>
                 </div>
                 <div class="card-wrap">
                     <div class="card-header">
-                        <h4>Online Users</h4>
+                        <h4>Total Kunjungan</h4>
                     </div>
                     <div class="card-body">
-                        47
+                        {{ $totalKunjungan?? 0 }}
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-12 ">
-            {{-- canvas chart --}}
-            <div class="card ">
-                <div class="card-header">
-                    <h4>Statistics</h4>
-                    <div class="card-header-action">
-                        <div class="btn-group">
-                            <a href="#" class="btn btn-primary">Week</a>
-                            <a href="#" class="btn">Month</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <canvas id="myChart" height="182"></canvas>
-                </div>
-            </div>
-        </div>
-    </div>
-    {{-- </div> --}}
+   @include('pages.admin.Dashboard.KunjunganPerbulan')
 
-    {{-- latest post --}}
-    <div class="row">
-        <div class="col-12">
-            <div class="card">
-                <div class="card-header">
-                    <h4>Latest Posts</h4>
-                    <div class="card-header-action">
-                        <a href="#" class="btn btn-primary">View All</a>
-                    </div>
-                </div>
-                <div class="card-body p-0">
-                    <div class="table-responsive">
-                        <table class="table table-striped mb-0">
-                            <thead>
-                                <tr>
-                                    <th>Title</th>
-                                    <th>Author</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        Laravel 5 Tutorial - MVC
-                                        <div class="table-links">
-                                            in <a href="#">Web Development</a>
-                                            <div class="bullet"></div>
-                                            <a href="#">View</a>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <a href="#" class="font-weight-600"><img src="assets/img/avatar/avatar-1.png"
-                                                alt="avatar" width="30" class="rounded-circle mr-1"> Bagus Dwi
-                                            Cahya</a>
-                                    </td>
-                                    <td>
-                                        <a class="btn btn-primary btn-action mr-1" data-toggle="tooltip" title="Edit"><i
-                                                class="fas fa-pencil-alt"></i></a>
-                                        <a class="btn btn-danger btn-action" data-toggle="tooltip" title="Delete"
-                                            data-confirm="Are You Sure?|This action can not be undone. Do you want to continue?"
-                                            data-confirm-yes="alert('Deleted')"><i class="fas fa-trash"></i></a>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
 @endsection

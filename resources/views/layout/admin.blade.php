@@ -19,19 +19,15 @@
     {{-- multiple select css --}}
     <link rel="stylesheet" href="{{ asset('assets/modules/select2/dist/css/select2.min.css') }}">
 
-  <link rel="stylesheet" href="{{ asset('assets/modules/jquery-selectric/selectric.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/modules/jquery-selectric/selectric.css') }}">
 
+    <link rel="stylesheet" href="{{ asset('assets/modules/jqvmap/dist/jqvmap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/modules/flag-icon-css/css/flag-icon.min.css') }}">
 
     {{-- time picker css --}}
     <link rel="stylesheet" href="{{ asset('assets/modules/bootstrap-timepicker/css/bootstrap-timepicker.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/modules/bootstrap-daterangepicker/daterangepicker.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/modules/bootstrap-tagsinput/dist/bootstrap-tagsinput.css') }}">
-
-
-
-
-
-
 
 
     <!-- Template CSS -->
@@ -90,7 +86,7 @@
     <script src="{{ asset('assets/modules/datatables/DataTables-1.10.16/js/dataTables.bootstrap4.min.js') }}"></script>
     <script src="{{ asset('assets/modules/datatables/Select-1.2.4/js/dataTables.select.min.js') }}"></script>
 
-  <script src="{{ asset('assets/modules/jquery-selectric/jquery.selectric.min.js') }}"></script>
+    <script src="{{ asset('assets/modules/jquery-selectric/jquery.selectric.min.js') }}"></script>
 
 
     <!-- Page Specific JS File -->
@@ -99,9 +95,11 @@
 
 
     <!-- Page Specific JS File -->
-    <script src="{{ asset('assets/js/page/index-0.js') }}"></script>
     <script src="{{ asset('assets/js/page/forms-advanced-forms.js') }}"></script>
-
+    
+    {{-- chart --}}
+    {{-- chart riwayat kunjugan --}}
+    <script src="{{ asset('chart/riwayatKunjunganChart.js') }}"></script> 
 
     {{-- multiple select --}}
     <script src="{{ asset('assets/modules/select2/dist/js/select2.full.min.js') }}"></script>
@@ -109,6 +107,9 @@
     {{-- time picker --}}
     <script src="{{ asset('assets/modules/bootstrap-timepicker/js/bootstrap-timepicker.min.js') }}"></script>
     <script src="{{ asset('assets/modules/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js') }}"></script>
+
+    {{-- bar chart statistics --}}
+    <script src="{{ asset('assets/modules/chart.min.js') }}"></script>
 
 
 

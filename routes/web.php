@@ -6,6 +6,7 @@ use App\Http\Controllers\DokterController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\OwnerController;
 use App\Http\Controllers\PetController;
+use App\Http\Controllers\RiwayatKunjunganChartController;
 use App\Http\Controllers\RiwayatKunjunganController;
 use Illuminate\Support\Facades\Route;
 
@@ -48,6 +49,9 @@ Route::middleware('auth')->group(function () {
         Route::put('/riwayat/update/{id}', [RiwayatKunjunganController::class, 'update'])->name('riwayat.update');
         Route::delete('/riwayat/delete/{id}', [RiwayatKunjunganController::class, 'destroy'])->name('riwayat.destroy');
 
+
+        // chart
+        Route::get('/riwayat-kunjungan-chart', [RiwayatKunjunganChartController::class, 'getChartData'])->name('riwayat.chart.data');
     });
 });
 
@@ -57,5 +61,3 @@ Route::middleware('guest')->group(function () {
 });
 
 Route::get('/', [LandingController::class, 'index'])->name('landing');
-
-
