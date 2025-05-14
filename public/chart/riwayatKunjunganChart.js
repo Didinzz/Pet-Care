@@ -38,25 +38,32 @@ function loadVisitChart(period) {
                     legend: {
                         display: false
                     },
-                    scales: {
-                        yAxes: [{
-                            gridLines: {
-                                drawBorder: false,
-                                color: '#f2f2f2',
-                            },
-                            ticks: {
-                                beginAtZero: false,
-                                stepSize: 10
-                            }
-                        }],
-                        xAxes: [{
-                            gridLines: {
-                                display: false
-                            }
-                        }]
-                    },
-                }
-            });
+                    tooltips: {
+
+                        bodyFontSize: 12,      // Ukuran font isi tooltip
+                        titleFontSize: 13,     // Ukuran font judul tooltip
+                        displayColors: true,  // Menyembunyikan kotak warna
+                        padding: 8,
+                        },
+                        scales: {
+                            yAxes: [{
+                                gridLines: {
+                                    drawBorder: false,
+                                    color: '#f2f2f2',
+                                },
+                                ticks: {
+                                    beginAtZero: false,
+                                    stepSize: 10
+                                }
+                            }],
+                            xAxes: [{
+                                gridLines: {
+                                    display: false
+                                }
+                            }]
+                        },
+                    }
+                });
         })
         .catch(error => {
             console.error('Error loading chart data:', error);

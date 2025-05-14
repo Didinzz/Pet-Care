@@ -100,6 +100,8 @@
     {{-- chart --}}
     {{-- chart riwayat kunjugan --}}
     <script src="{{ asset('chart/riwayatKunjunganChart.js') }}"></script> 
+    {{-- jenis layanan chart --}}
+    <script src="{{ asset('chart/jenisLayananChart.js') }}"></script>
 
     {{-- multiple select --}}
     <script src="{{ asset('assets/modules/select2/dist/js/select2.full.min.js') }}"></script>

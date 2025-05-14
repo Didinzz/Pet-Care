@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DokterController;
+use App\Http\Controllers\JenisLayananChartController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\OwnerController;
 use App\Http\Controllers\PetController;
@@ -61,3 +62,5 @@ Route::middleware('guest')->group(function () {
 });
 
 Route::get('/', [LandingController::class, 'index'])->name('landing');
+
+Route::get('/jenis-layanan-chart', [JenisLayananChartController::class, 'getJenisLayananChart'])->name('jenis.chart.data');

@@ -1,4 +1,3 @@
- <div class="row">
      <!-- bar chart -->
      <div class="col-12 col-sm-12 col-lg-6">
          <div class="card">
@@ -11,14 +10,8 @@
                  </div>
              </div>
              <div class="card-body">
-                 <canvas id="myChart2" height="180"></canvas>
+                 <canvas id="myChart2" height="150"></canvas>
              </div>
          </div>
 
      </div>
- </div>
-
-
-
-
-

@@ -67,7 +67,10 @@
             </div>
         </div>
     </div>
-   @include('pages.admin.Dashboard.KunjunganPerbulan')
+    <div class="row">
+        @include('pages.admin.Dashboard.KunjunganPerbulanChart')
+        @include('pages.admin.Dashboard.JenisLayananChart')
+    </div>
 
 
 @endsection
