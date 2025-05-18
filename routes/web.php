@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\API\WhatssAppController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DokterController;
@@ -71,4 +72,5 @@ Route::middleware('guest')->group(function () {
 });
 
 Route::get('/', [LandingController::class, 'index'])->name('landing');
+
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\API\WhatssAppController;
 use App\Models\Pet;
 use App\Models\RiwayatKunjungan;
 use App\Models\User;
@@ -55,6 +56,7 @@ class RiwayatKunjunganController extends Controller
         $nilaiKunjunganUlang = $request->kunjungan_ulang === 'on' ? true : false;
         $tanggalKunjunganUlang = $nilaiKunjunganUlang ? $request->tanggal_kunjungan_ulang : null;
 
+        // Ambil data owner dari relasi pet -> owner
         $riwayatKunjungan = RiwayatKunjungan::create([
             'pet_id' => $request->pet_id,
             'user_id' => $request->dokter_id,
@@ -65,8 +67,16 @@ class RiwayatKunjunganController extends Controller
             'tanggal_kunjungan_ulang' => $tanggalKunjunganUlang
         ]);
 
-        $riwayatKunjungan->save();
 
+        $pet = $riwayatKunjungan->pet; // relasi pet() harus ada di model RiwayatKunjungan
+        $owner = $pet->owner; // relasi owner() harus ada di model Pets
+
+
+        if ($owner && $owner->nama_lengkap && $owner->no_hp) {
+            WhatssAppController::sendMessage($owner->nama_lengkap, $owner->no_hp, $riwayatKunjungan->tanggal_kunjungan, $riwayatKunjungan->jenis_layanan, $riwayatKunjungan->tanggal_kunjungan_ulang);
+        }
+
+        $riwayatKunjungan->save();
         return redirect()->route('riwayat')->with('success', 'Riwayat kunjungan berhasil ditambahkan');
     }
 
@@ -110,7 +120,7 @@ class RiwayatKunjunganController extends Controller
             'jenis_layanan.in' => 'Jenis layanan tidak valid',
             'keterangan.string' => 'Keterangan harus berupa teks',
         ]);
-        
+
         // dd($request->all());
 
         $nilaiKunjunganUlang = $request->kunjungan_ulang === 'on' ? true : false;
@@ -143,6 +153,5 @@ class RiwayatKunjunganController extends Controller
         $riwayatKunjungan->delete();
 
         return redirect()->route('riwayat')->with('success', 'Riwayat kunjungan berhasil dihapus');
-
     }
 }
