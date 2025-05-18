@@ -12,7 +12,7 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: '#4B9D9C',
+                        primary: '#60a5fa',
                         'primary-dark': '#3A7C7B',
                         'primary-light': '#6BAEAE',
                     }

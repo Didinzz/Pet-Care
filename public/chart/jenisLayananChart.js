@@ -1,4 +1,4 @@
-fetch('/jenis-layanan-chart')
+fetch('/dashboard/jenis-layanan-chart')
     .then(response => response.json())
     .then(chartData => {
 
@@ -8,15 +8,7 @@ fetch('/jenis-layanan-chart')
             data: {
                 datasets: [{
                     data: chartData.data,
-                    backgroundColor: [
-                        '#FF5733',
-                        '#33FF57',
-                        '#3357FF',
-                        '#FF33A1',
-                        '#33FFA1',
-                        '#A133FF',
-                        '#FFA133',
-                    ],
+                    backgroundColor: chartData.labels.map(() => '#' + ((Math.random() * 0xffffff) << 0).toString(16)),
                     label: 'Dataset 1'
                 }],
                 labels: chartData.labels,

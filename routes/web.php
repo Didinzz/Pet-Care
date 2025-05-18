@@ -53,6 +53,9 @@ Route::middleware('auth')->group(function () {
 
         // chart
         Route::get('/riwayat-kunjungan-chart', [RiwayatKunjunganChartController::class, 'getChartData'])->name('riwayat.chart.data');
+        Route::get('/jenis-layanan-chart', [JenisLayananChartController::class, 'getJenisLayananChart'])->name('jenis.chart.data');
+
+
     });
 });
 
@@ -63,4 +66,3 @@ Route::middleware('guest')->group(function () {
 
 Route::get('/', [LandingController::class, 'index'])->name('landing');
 
-Route::get('/jenis-layanan-chart', [JenisLayananChartController::class, 'getJenisLayananChart'])->name('jenis.chart.data');

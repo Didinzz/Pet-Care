@@ -65,8 +65,15 @@ class RiwayatKunjunganChartController extends Controller
         // Siapkan label dan data awal (default 0)
         for ($i = 0; $i < 7; $i++) {
             $date = $startDate->copy()->addDays($i);
-            $labels[] = $dayMapping[$date->format('l')];
-            $data[$date->format('Y-m-d')] = 0;
+            $formattedDate = $date->format('Y-m-d');
+            $total = 0;
+
+            if ($visit = $visits->firstWhere('date', $formattedDate)) {
+                $total = (int) $visit->total;
+            }
+
+            $data[$formattedDate] = $total;
+            $labels[] = $dayMapping[$date->format('l')] . ": {$total}";
         }
 
         // Isi data berdasarkan hasil query

@@ -1,10 +1,10 @@
 <div class="main-sidebar sidebar-style-2">
     <aside id="sidebar-wrapper">
         <div class="sidebar-brand">
-            <a href="index.html">PawCare</a>
+            <a href="{{ route('landing') }}">PawCare</a>
         </div>
         <div class="sidebar-brand sidebar-brand-sm">
-            <a href="index.html">PWC</a>
+            <a href="{{ route('landing') }}">PWC</a>
         </div>
         <ul class="sidebar-menu">
             <li class="menu-header">Dashboard</li>
@@ -19,19 +19,27 @@
                     <span>Customer Management</span></a>
                 <ul class="dropdown-menu">
                     <li class="@yield('owner')"><a class="nav-link" href="{{ route('owner') }}">Data Pemilik</a></li>
-                    <li class="@yield('pet')"><a class="nav-link" href="{{ route('pet') }}">Data Hewan Peliharaan</a></li>
+                    <li class="@yield('pet')"><a class="nav-link" href="{{ route('pet') }}">Data Hewan
+                            Peliharaan</a></li>
                 </ul>
             </li>
 
             {{-- dokter management --}}
             <li class="menu-header">Dokter</li>
-            <li class="@yield('Dokter')"><a class="nav-link" href="{{ route('dokter') }}"><i class="fas fa-user-md"></i>
+            <li class="@yield('Dokter')"><a class="nav-link" href="{{ route('dokter') }}"><i
+                        class="fas fa-user-md"></i>
                     <span>Data Dokter Hewan</span></a></li>
 
             {{-- riwayat kunjungan --}}
             <li class="menu-header">Riwayat Kunjungan</li>
-            <li class="@yield('riwayat')"><a class="nav-link" href="{{ route('riwayat') }}"><i class="fas fa-history"></i>
+            <li class="@yield('riwayat')"><a class="nav-link" href="{{ route('riwayat') }}"><i
+                        class="fas fa-history"></i>
                     <span>Riwayat Kunjungan</span></a></li>
+
+            {{-- Feedback Kepuasan Pelanggan --}}
+            <li class="menu-header">Feedback</li>
+            <li class="@yield('feedback')"><a class="nav-link" href=""><i class="fas fa-comment-alt"></i>
+                    <span>Feedback</span></a></li>
         </ul>
 
         <div class="mt-4 mb-4 p-3 hide-sidebar-mini">
@@ -43,4 +51,3 @@
         </div>
     </aside>
 </div>
-

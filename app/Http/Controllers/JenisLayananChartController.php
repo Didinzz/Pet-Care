@@ -14,7 +14,9 @@ class JenisLayananChartController extends Controller
             ->groupBy('jenis_layanan')
             ->get();
 
-            $labels = $data->pluck('jenis_layanan');
+            $labels = $data->map(function ($item) {
+                return $item->jenis_layanan . ' ' . $item->total;
+            });
             $values = $data->pluck('total');
 
             return response()->json([

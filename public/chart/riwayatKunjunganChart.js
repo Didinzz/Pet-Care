@@ -27,7 +27,7 @@ function loadVisitChart(period) {
                         label: 'Kunjungan Pelanggan',
                         data: chartData.data,
                         borderWidth: 2,
-                        backgroundColor: 'rgba(63,82,227,.8)',
+                        backgroundColor: '#60a5fa',
                         borderColor: 'transparent',
                         borderWidth: 0,
                         pointBackgroundColor: '#999',
@@ -53,7 +53,7 @@ function loadVisitChart(period) {
                                 },
                                 ticks: {
                                     beginAtZero: false,
-                                    stepSize: 10
+                                    stepSize: 2
                                 }
                             }],
                             xAxes: [{
