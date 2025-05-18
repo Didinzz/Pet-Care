@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DokterController;
+use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\JenisLayananChartController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\OwnerController;

@@ -11,9 +11,9 @@
 
         <!-- Kontak (Telepon/Email) -->
         <div class="form-group">
-            <label for="contact" class="form-label">Nomor Telepon / Email (Opsional)</label>
+            <label for="contact" class="form-label">Email</label>
             <input type="text" id="contact" name="contact" class="form-input"
-                placeholder="Masukkan nomor telepon atau email Anda">
+                placeholder="Masukkan nomor telepon atau email Anda" required>
         </div>
 
         <!-- Tanggal Kunjungan -->
