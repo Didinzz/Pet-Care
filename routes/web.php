@@ -56,6 +56,11 @@ Route::middleware('auth')->group(function () {
         Route::get('/riwayat-kunjungan-chart', [RiwayatKunjunganChartController::class, 'getChartData'])->name('riwayat.chart.data');
         Route::get('/jenis-layanan-chart', [JenisLayananChartController::class, 'getJenisLayananChart'])->name('jenis.chart.data');
 
+        // feedback
+        Route::get('/feedback', [FeedbackController::class, 'dashboard'])->name('feedback.dashboard');
+        Route::get('/feedback/table', [FeedbackController::class, 'feedbackTable'])->name('feedback.table');
+        Route::get('/spiderChart-feedback', [FeedbackController::class, 'spiderChartFeedback'])->name('spiderChart.feedback');
+
 
     });
 });

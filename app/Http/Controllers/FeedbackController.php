@@ -3,11 +3,74 @@
 namespace App\Http\Controllers;
 
 use App\Models\Feedback;
+use App\Models\Owner;
+use App\Models\Pet;
+use App\Models\RiwayatKunjungan;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 
 class FeedbackController extends Controller
 {
+    public function dashboard()
+    {
+        $totalFeedback = Feedback::count();
+        $avgRating = DB::table('feedback')->selectRaw('ROUND((AVG(q1_rating + q2_rating + q3_rating + q4_rating + q5_rating + q6_rating + q7_rating + q8_rating + q9_rating + q10_rating + q11_rating + q12_rating)/12), 1) as avg_rating')->value('avg_rating');
+
+        $feedbackToday = DB::table('feedback')
+            ->whereDate('tanggal_berkunjung', today())
+            ->count();
+
+
+        return view('pages.admin.Feedback.Dashboard', compact('totalFeedback', 'avgRating', 'feedbackToday'));
+    }
+
+    public function spiderChartFeedback()
+    {
+        $layananAvg = DB::selectOne('SELECT AVG((q1_rating + q2_rating + q3_rating + q4_rating + q5_rating)/5) as avg FROM feedback')->avg;
+
+        $fasilitasAvg = DB::selectOne('SELECT AVG((q6_rating + q7_rating + q8_rating + q9_rating)/4) as avg FROM feedback')->avg;
+
+        $pengalamanAvg = DB::selectOne('SELECT AVG((q10_rating + q11_rating + q12_rating)/3) as avg FROM feedback')->avg;
+
+        return response()->json([
+            'layanan' => round($layananAvg, 1),
+            'fasilitas' => round($fasilitasAvg, 1),
+            'pengalaman' => round($pengalamanAvg, 1),
+        ]);
+    }
+
+
+    public function feedbackTable()
+    {
+        $feedback = Feedback::all()->map(function ($item) {
+            $item->layanan = round(collect([
+                $item->q1_rating,
+                $item->q2_rating,
+                $item->q3_rating,
+                $item->q4_rating,
+                $item->q5_rating
+            ])->avg(), 1);
+
+            $item->fasilitas = round(collect([
+                $item->q6_rating,
+                $item->q7_rating,
+                $item->q8_rating,
+                $item->q9_rating
+            ])->avg(), 1);
+
+            $item->pengalaman = round(collect([
+                $item->q10_rating,
+                $item->q11_rating,
+                $item->q12_rating
+            ])->avg(), 1);
+
+            return $item;
+        });
+        return view('pages.admin.Feedback.Feedback', compact('feedback'));
+    }
+
     public function store(Request $request)
     {
         try {

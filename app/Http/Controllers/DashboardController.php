@@ -15,6 +15,6 @@ class DashboardController extends Controller
         $totalPelanggan = Owner::count();
         $totalHewan = Pet::count();
         $totalKunjungan = RiwayatKunjungan::count();
-        return view('pages.admin.dashboard', compact('totalDokter', 'totalPelanggan', 'totalHewan', 'totalKunjungan'));
+        return view('pages.admin.Dashboard.dashboard', compact('totalDokter', 'totalPelanggan', 'totalHewan', 'totalKunjungan'));
     }
 }

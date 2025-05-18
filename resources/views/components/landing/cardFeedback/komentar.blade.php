@@ -1,6 +1,6 @@
 <div class="bg-white rounded-lg shadow-md p-6">
     <div class="mb-4">
-        <label for="comments" class="block text-lg font-semibold text-gray-700 mb-2 flex items-center">
+        <label for="comments" class=" text-lg font-semibold text-gray-700 mb-2 flex items-center">
             <svg class="w-5 h-5 mr-2 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
                 <path
                     d="M18 2a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-3.5L12 19v-3H2a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h16zm-5 9H7a1 1 0 0 0 0 2h6a1 1 0 0 0 0-2zm0-4H7a1 1 0 0 0 0 2h6a1 1 0 1 0 0-2zm-5-3a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm2 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm2 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />

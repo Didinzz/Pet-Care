@@ -36,10 +36,15 @@
                         class="fas fa-history"></i>
                     <span>Riwayat Kunjungan</span></a></li>
 
-            {{-- Feedback Kepuasan Pelanggan --}}
             <li class="menu-header">Feedback</li>
-            <li class="@yield('feedback')"><a class="nav-link" href=""><i class="fas fa-comment-alt"></i>
-                    <span>Feedback</span></a></li>
+            <li class="dropdown @yield('feedback')">
+                <a href="#" class="nav-link has-dropdown"><i class="fas fa-comment-alt"></i>
+                    <span>Feedback</span></a>
+                <ul class="dropdown-menu">
+                    <li class="@yield('feedbackDashboard')"><a class="nav-link" href="{{ route('feedback.dashboard') }}">Dashboard</a></li>
+                    <li class="@yield('feedbackTable')"><a class="nav-link" href="{{ route('feedback.table') }}">Feedback</a></li>
+                </ul>
+            </li>
         </ul>
 
         <div class="mt-4 mb-4 p-3 hide-sidebar-mini">

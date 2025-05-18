@@ -39,7 +39,6 @@ function loadVisitChart(period) {
                         display: false
                     },
                     tooltips: {
-
                         bodyFontSize: 12,      // Ukuran font isi tooltip
                         titleFontSize: 13,     // Ukuran font judul tooltip
                         displayColors: true,  // Menyembunyikan kotak warna
