@@ -52,10 +52,9 @@
                                             </td>
                                             <td data-toggle="tooltip" title="{{ $riwayat->keterangan ?: '-' }}">
                                                 {{ $riwayat->jenis_layanan }}</td>
-                                            <td @if ($riwayat->kunjungan_ulang)
-                                                data-toggle="tooltip"
-                                                title="Kunjungan ulang pada: {{ $riwayat->tanggal_kunjungan_ulang ? \Carbon\Carbon::parse($riwayat->tanggal_kunjungan_ulang)->translatedFormat('d F') : '-' }}"
-                                            @endif>
+                                            <td
+                                                @if ($riwayat->kunjungan_ulang) data-toggle="tooltip"
+                                                title="Kunjungan ulang pada: {{ $riwayat->tanggal_kunjungan_ulang ? \Carbon\Carbon::parse($riwayat->tanggal_kunjungan_ulang)->translatedFormat('d F') : '-' }}" @endif>
                                                 {{ $riwayat->kunjungan_ulang ? 'Kunjungan Ulang' : 'Selesai' }}
                                             </td>
                                             <td>
@@ -64,8 +63,7 @@
                                                     class="btn btn-warning btn-md"><i class="fas fa-pencil-alt"></i></a>
                                                 {{-- delete --}}
                                                 <button class="btn btn-danger btn-md"
-                                                    data-confirm="Hapus?|Apakah anda ingin menghapus data ini?"
-                                                    data-confirm-yes="document.getElementById('delete-form-{{ $riwayat->id }}').submit();">
+                                                    onclick="if(confirm('Apakah anda yakin ingin menghapus data ini?')) document.getElementById('delete-form-{{ $riwayat->id }}').submit();">
                                                     <i class="fas fa-trash"></i>
                                                 </button>
                                                 <form id="delete-form-{{ $riwayat->id }}"
